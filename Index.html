@@ -1,0 +1,94 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTUC Digital Membership Drive
+        (Karnataka)</title>
+</head>
+<style>
+    body{
+        background-color: aqua;
+    }
+    .button{
+        background: linear-gradient(to right,#eeba00,#eed600);
+        border-radius: 20px;
+       padding: 10px 55px;
+       color: whitesmoke;
+      
+       margin: 20px;
+       margin-left: 50px;
+
+    }
+    h1{
+        margin-left: 500px;
+    }
+    h2{
+        margin-left: 700px; 
+    }
+    label{
+        position: relative;
+        left: 700px;
+    }
+    input{
+        position: relative;
+        left: 700px;
+        background-color: beige;
+    }
+    select{
+        position: relative;
+        left: 700px;
+        background-color: beige;
+    }
+</style>
+<body>
+    
+        <h1>INTUC DIGITAL MEMBERSHIP DRIVE(KARNATAKA)</h1>
+        <h2>Enter your details</h2>
+        <form method="POST" action="https://sheetdb.io/api/v1/5nmp6fn0uktsc" id="sheetdb-form">
+          <label for="firstName">first Name:</label>
+          <input type="text" id="firstName" name="firstName"><br><br>
+          <label for="aadharNumber">aadhar Number:</label>
+          <input type="text" id="aadharNumber" name="aadharNumber"><br><br>
+          <label for="mobileNumber">mobile Number:</label>
+          <input type="text" id="mobileNumber" name="mobileNumber"><br><br>
+          <label for="classification">classification:</label>
+          <select id="classification" name="classification">
+            <option value="Construction labour ">Construction labour</option>
+            <option value="House maid">house maid</option>
+            <option value="Driver">Driver</option>
+            <option value="Daily wage">Daily wage</option>
+            <option value="Security gaurd">Security gaurd</option>
+            <option value="Medical">Medical</option>
+            <option value="Farming">Farming</option>
+            <option value="Others">Others</option>
+          </select><br><br>
+          <input class="button" type="submit" name="submit" value="Submit">
+        </form>
+        <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          )
+          .then(response => { 
+              btn.disabled = false
+             btn.innerHTML = "Submit"
+              alert('Success!', response) })
+               .catch(error => {
+                     btn.disabled = false
+              btn.innerHTML = "Submit"
+               alert('Error!', error.message)})
+        });
+        </script>
+</body>
+    
+  
+    
+
+</html>
